@@ -23,7 +23,7 @@ extension TabView {
     ///
     ///
     ///
-    public func setupTabViewStyles(
+    public func setupTabViewStyle(
         colors: Colors,
         titleFont: UIFont,
         badgeFont: UIFont
