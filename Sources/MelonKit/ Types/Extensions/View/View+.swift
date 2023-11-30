@@ -64,11 +64,11 @@ extension View {
     ///
     ///
     @available(iOS 16.0, *)
-    public func isDark(_ view: some View) async -> Bool {
+    public func detectDarkness(in view: some View) async -> Bool {
         guard let image = await renderImage(from: view) else {
             return false
         }
 
-        return await image.isDark()
+        return image.isDark
     }
 }

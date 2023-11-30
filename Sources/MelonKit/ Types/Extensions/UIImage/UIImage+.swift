@@ -21,7 +21,7 @@ extension UIImage {
     ///
     ///
     @available(iOS 16.0, *)
-    public func isDark() async -> Bool {
-        await self.cgImage?.isDark() ?? false
+    public var isDark: Bool {
+        self.cgImage?.isDark ?? false
     }
 }

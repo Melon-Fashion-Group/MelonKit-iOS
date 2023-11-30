@@ -21,7 +21,7 @@ extension CGImage {
     ///
     ///
     @available(iOS 16.0, *)
-    public func isDark() async -> Bool {
+    public var isDark: Bool {
         guard
             let data = self.dataProvider?.data,
             let pointer = CFDataGetBytePtr(data)
