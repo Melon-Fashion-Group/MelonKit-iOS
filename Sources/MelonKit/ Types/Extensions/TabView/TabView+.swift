@@ -23,7 +23,7 @@ extension TabView {
     ///
     ///
     ///
-    public func setupTabViewStyle(
+    public func setupTabViewStyles(
         colors: Colors,
         titleFont: UIFont,
         badgeFont: UIFont
@@ -50,6 +50,9 @@ extension TabView {
 
         newItemAppearance.normal.badgeBackgroundColor = .init(colors.selected)
         newItemAppearance.selected.badgeBackgroundColor = .init(colors.selected)
+
+        newItemAppearance.normal.badgeTitlePositionAdjustment = .init(horizontal: 0.2, vertical: 0.5)
+        newItemAppearance.selected.badgeTitlePositionAdjustment = .init(horizontal: 0.2, vertical: 0.5)
 
         newItemAppearance.normal.badgeTextAttributes = [
             .foregroundColor: UIColor(colors.background),
