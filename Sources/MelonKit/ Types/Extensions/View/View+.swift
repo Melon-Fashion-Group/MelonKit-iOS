@@ -46,10 +46,13 @@ extension View {
     ///
     ///
     @available(iOS 16.0, *)
-    public func renderImage(_ closure: @escaping (MLNImageRenderable) -> Void) -> some View {
-        let renderedView = MLNImageRendererView(closure)
+    @MainActor
+    public func renderImage(_ closure: @escaping (UIImage?) -> Void) -> some View {
+        let renderer = ImageRenderer(content: self)
 
-        return overlay(renderedView.allowsHitTesting(false))
+        closure(renderer.uiImage)
+
+        return self
     }
 }
 
