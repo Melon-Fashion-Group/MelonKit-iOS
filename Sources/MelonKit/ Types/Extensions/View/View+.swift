@@ -46,30 +46,10 @@ extension View {
     ///
     ///
     @available(iOS 16.0, *)
-    @MainActor
-    public func renderImage(from view: some View) -> UIImage? {
-        let renderer = ImageRenderer(content: view)
+    public func renderImage(_ closure: @escaping (MLNImageRenderable) -> Void) -> some View {
+        let renderedView = MLNImageRendererView(closure)
 
-        return renderer.uiImage
-    }
-}
-
-
-
-// MARK: - View Darkness Detection
-
-extension View {
-
-    ///
-    ///
-    ///
-    @available(iOS 16.0, *)
-    public func detectDarkness(in view: some View) async -> Bool {
-        guard let image = await renderImage(from: view) else {
-            return false
-        }
-
-        return image.isDark
+        return overlay(renderedView.allowsHitTesting(false))
     }
 }
 
