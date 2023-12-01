@@ -72,3 +72,19 @@ extension View {
         return image.isDark
     }
 }
+
+
+
+// MARK: - Shimmer Effect
+
+extension View {
+
+    ///
+    ///
+    ///
+    @available(iOS 16.0, *)
+    @ViewBuilder
+    public func shimmerEffect(configuration: MLNShimmerEffectModifier.Configuration) -> some View {
+        self.modifier(MLNShimmerEffectModifier(configuration: configuration))
+    }
+}
