@@ -47,9 +47,6 @@ extension View {
     ///
     @available(iOS 15.0, *)
     @MainActor public func renderImage(_ closure: @escaping (UIImage?) -> Void) -> some View {
-//        let renderer = ImageRenderer(content: self)
-
-//        closure(renderer.uiImage)
 
         return self
     }
