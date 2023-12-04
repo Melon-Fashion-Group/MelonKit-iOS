@@ -18,5 +18,5 @@ import Foundation
 ///
 /// An alias for AnyObject & CustomStringConvertible types used to extend MelonKit services.
 ///
-@available(iOS 16.0, *)
+@available(iOS 15.0, *)
 public typealias MLNObject = AnyObject & CustomStringConvertible

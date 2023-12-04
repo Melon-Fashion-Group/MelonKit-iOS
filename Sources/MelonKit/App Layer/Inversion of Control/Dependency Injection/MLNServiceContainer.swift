@@ -18,7 +18,7 @@ import Foundation
 ///
 ///
 ///
-@available(iOS 16.0, *)
+@available(iOS 15.0, *)
 public final class MLNServiceContainer: MLNServiceContainerable {
 
     // MARK: - Static properties
@@ -38,7 +38,7 @@ public final class MLNServiceContainer: MLNServiceContainerable {
         type: Service.Type,
         _ factory: @autoclosure @escaping () -> Service
     ) {
-        factories[String(describing: type.self)] = factory
+        factories[.init(describing: type.self)] = factory
     }
 
     ///

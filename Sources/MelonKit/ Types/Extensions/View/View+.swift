@@ -20,7 +20,7 @@ extension View {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
+    @available(iOS 15.0, *)
     public func executeNewTask(
         delay: Float = 0,
         body: (() -> Void)? = nil,
@@ -45,12 +45,11 @@ extension View {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
-    @MainActor
-    public func renderImage(_ closure: @escaping (UIImage?) -> Void) -> some View {
-        let renderer = ImageRenderer(content: self)
+    @available(iOS 15.0, *)
+    @MainActor public func renderImage(_ closure: @escaping (UIImage?) -> Void) -> some View {
+//        let renderer = ImageRenderer(content: self)
 
-        closure(renderer.uiImage)
+//        closure(renderer.uiImage)
 
         return self
     }
@@ -65,9 +64,8 @@ extension View {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
-    @ViewBuilder
-    public func shimmerEffect(configuration: MLNShimmerEffectModifier.Configuration) -> some View {
+    @available(iOS 15.0, *)
+    @ViewBuilder public func shimmerEffect(configuration: MLNShimmerEffectModifier.Configuration) -> some View {
         self.modifier(MLNShimmerEffectModifier(configuration: configuration))
     }
 }

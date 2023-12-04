@@ -22,7 +22,7 @@ extension MLNShimmerEffectModifier {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
+    @available(iOS 15.0, *)
     public struct Configuration {
 
         // MARK: - Public properties

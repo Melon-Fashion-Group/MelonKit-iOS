@@ -19,7 +19,7 @@ import AudioToolbox.AudioServices
 ///
 /// A class that implements the operation of  Haptic Feedback.
 ///
-@available(iOS 16.0, *)
+@available(iOS 15.0, *)
 public final class MLNHaptic: MLNHapticExecutable {
 
     // MARK: - Static properties

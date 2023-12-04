@@ -18,5 +18,5 @@ import Foundation
 ///
 /// A protocol describing the specification of a service class.
 ///
-@available(iOS 16.0, *)
+@available(iOS 15.0, *)
 public protocol MLNServiceable: MLNObject { }

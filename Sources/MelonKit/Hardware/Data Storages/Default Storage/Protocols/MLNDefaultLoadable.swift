@@ -18,7 +18,7 @@ import Foundation
 ///
 ///
 ///
-@available(iOS 16.0, *)
+@available(iOS 15.0, *)
 public protocol MLNDefaultLoadable: MLNServiceable {
 
     // MARK: - Public methods

@@ -20,7 +20,7 @@ extension UIImage {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
+    @available(iOS 15.0, *)
     public var isDark: Bool {
         self.cgImage?.isDark ?? false
     }

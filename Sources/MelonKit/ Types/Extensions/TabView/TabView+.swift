@@ -23,7 +23,7 @@ extension TabView {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
+    @available(iOS 15.0, *)
     public func setupTabViewStyle(
         colors: Colors,
         titleFont: UIFont,
@@ -86,7 +86,7 @@ extension TabView {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
+    @available(iOS 15.0, *)
     public struct Colors {
 
         // MARK: - Public properties

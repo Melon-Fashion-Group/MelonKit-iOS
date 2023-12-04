@@ -21,10 +21,10 @@ import Foundation
 
 // MARK: - Helpers
 
-@available(iOS 16.0, *)
+@available(iOS 15.0, *)
 public typealias MLNObject = AnyObject & CustomStringConvertible
 
-@available(iOS 16.0, *)
+@available(iOS 15.0, *)
 public protocol MLNServiceable: MLNObject { }
 
 extension MLNServiceable {

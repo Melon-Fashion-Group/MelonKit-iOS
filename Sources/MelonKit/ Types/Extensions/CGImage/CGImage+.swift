@@ -20,7 +20,7 @@ extension CGImage {
     ///
     ///
     ///
-    @available(iOS 16.0, *)
+    @available(iOS 15.0, *)
     public var isDark: Bool {
         guard
             let data = self.dataProvider?.data,
