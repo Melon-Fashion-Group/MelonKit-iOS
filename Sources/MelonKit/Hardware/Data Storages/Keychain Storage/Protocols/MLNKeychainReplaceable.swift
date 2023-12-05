@@ -1,5 +1,5 @@
 //
-//  MLNDefaultReplaceable.swift
+//  MLNKeychainReplaceable.swift
 //  MelonKit
 //
 //  Created by Dimka Novikov on 05.12.2023.
@@ -13,18 +13,18 @@ import Foundation
 
 
 
-// MARK: - MLNDefaultReplaceable
+// MARK: - MLNKeychainReplaceable
 
 ///
 ///
 ///
 @available(iOS 15.0, *)
-public protocol MLNDefaultReplaceable: MLNServiceable {
+public protocol MLNKeychainReplaceable: MLNServiceable {
 
     // MARK: - Public methods
 
     ///
     ///
     ///
-    func replace<Object: MLNDataEncodable>(_ object: Object, forKey key: String) async -> Bool
+    func replace<Object: MLNDataEncodable>(_ object: Object, for service: String, with account: String) async -> Bool
 }

@@ -1,5 +1,5 @@
 //
-//  MLNDefaultEncodable.swift
+//  MLNDataEncodable.swift
 //  MelonKit
 //
 //  Created by Dimka Novikov on 05.12.2023.
@@ -13,10 +13,10 @@ import Foundation
 
 
 
-// MARK: - MLNDefaultEncodable
+// MARK: - MLNDataDecodable
 
 ///
 ///
 ///
 @available(iOS 15.0, *)
-public typealias MLNDefaultEncodable = Encodable
+public typealias MLNDataEncodable = Encodable

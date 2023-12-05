@@ -1,5 +1,5 @@
 //
-//  MLNDefaultDecodable.swift
+//  MLNDataDecodable.swift
 //  MelonKit
 //
 //  Created by Dimka Novikov on 05.12.2023.
@@ -13,10 +13,10 @@ import Foundation
 
 
 
-// MARK: - MLNDefaultDecodable
+// MARK: - MLNDataDecodable
 
 ///
 ///
 ///
 @available(iOS 15.0, *)
-public typealias MLNDefaultDecodable = Decodable
+public typealias MLNDataDecodable = Decodable

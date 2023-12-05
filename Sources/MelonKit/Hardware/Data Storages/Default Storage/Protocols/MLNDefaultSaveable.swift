@@ -26,10 +26,5 @@ public protocol MLNDefaultSaveable: MLNServiceable {
     ///
     ///
     ///
-    func save<Object: MLNDefaultEncodable>(_ object: Object, forKey key: String) -> Bool
-
-    ///
-    ///
-    ///
-    func save<Object: MLNDefaultEncodable>(_ objects: [Object], forKeys keys: [String]) -> Bool
+    func save<Object: MLNDataEncodable>(_ object: Object, forKey key: String) async -> Bool
 }
