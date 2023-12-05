@@ -249,8 +249,9 @@ extension MLNCachingStorage: MLNCachingSaveable {
 // 6. Live Preview ❌
 // 7. Logger ❌
 // 8. Project Specifications ❌ -> App Specification ❌ / Framework Specification ❌
-// 9. Data Storage ❌ -> Caching Storage ⚠️ / Default Storage ❌ / File Storage / Keychain Storage ❌
+// 9. Data Storages ⚠️ -> Caching Storage ❌ / Default Storage ✅ / File Storage ❌ / Keychain Storage ❌
 // 10. Haptic Feedbacks ✅ -> Haptic Feedback ✅
 // 11. Media Engines ❌ -> Video Engine ❌
 // 12. Network Interaction ⚠️ -> Network Configuration ✅ / Network Manager ❌
+// 13. Encryption Algortihms ✅ -> Hashing [SHA-2] ✅
 // 13. Setting up MelonKit repo

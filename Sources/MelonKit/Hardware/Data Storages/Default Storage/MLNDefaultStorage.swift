@@ -2,7 +2,7 @@
 //  MLNDefaultStorage.swift
 //  MelonKit
 //
-//  Created by Dimka Novikov on 01.12.2023.
+//  Created by Dimka Novikov on 05.12.2023.
 //  Copyright © 2023 Melon Fashion Group. All rights reserved.
 //
 
@@ -46,43 +46,34 @@ extension MLNDefaultStorage: MLNDefaultLoadable {
     ///
     ///
     ///
-    @discardableResult
-    public func load<Object: MLNDefaultDecodable>(_ object: inout Object, forKey key: String) -> Bool {
+    public func load<Object: MLNDefaultDecodable>(_ type: Object.Type, forKey key: String) -> Object? {
         guard
-            let data = userDefaults.object(forKey: key) as? Data,
-            let loadedObject = try? JSONDecoder().decode(Object.self, from: data)
+            let object = userDefaults.object(forKey: key) as? Data,
+            let loadedObject = try? JSONDecoder().decode(type, from: object)
         else {
-            return false
+            return nil
         }
 
-        object = loadedObject
-
-        return true
+        return loadedObject
     }
 
     ///
     ///
     ///
-    @discardableResult
-    public func load<Object: MLNDefaultDecodable>(_ objects: inout [Object], forKeys keys: [String]) -> Bool {
+    public func load<Object: MLNDefaultDecodable>(_ type: Object.Type, forKeys keys: [String]) -> [Object]? {
         var loadedObjects: [Object] = []
 
         keys.forEach { key in
-            guard
-                let data = userDefaults.object(forKey: key) as? Data,
-                let loadedObject = try? JSONDecoder().decode(Object.self, from: data)
-            else { return }
+            guard let loadedObject = load(type, forKey: key) else { return }
 
             loadedObjects.append(loadedObject)
         }
 
         guard loadedObjects.count == keys.count else {
-            return false
+            return nil
         }
 
-        objects = loadedObjects
-
-        return true
+        return loadedObjects
     }
 }
 
@@ -129,11 +120,11 @@ extension MLNDefaultStorage: MLNDefaultRemovable {
     ///
     @discardableResult
     public func removeAll() -> Bool {
-        guard let domain = Bundle.main.bundleIdentifier else {
+        guard let bundleID = Bundle.main.bundleIdentifier else {
             return false
         }
 
-        userDefaults.removePersistentDomain(forName: domain)
+        userDefaults.removePersistentDomain(forName: bundleID)
 
         userDefaults.synchronize()
 

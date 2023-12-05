@@ -2,7 +2,7 @@
 //  MLNDefaultLoadable.swift
 //  MelonKit
 //
-//  Created by Dimka Novikov on 01.12.2023.
+//  Created by Dimka Novikov on 05.12.2023.
 //  Copyright © 2023 Melon Fashion Group. All rights reserved.
 //
 
@@ -26,10 +26,10 @@ public protocol MLNDefaultLoadable: MLNServiceable {
     ///
     ///
     ///
-    func load<Object: MLNDefaultDecodable>(_ object: inout Object, forKey key: String) -> Bool
+    func load<Object: MLNDefaultDecodable>(_ type: Object.Type, forKey key: String) -> Object?
 
     ///
     ///
     ///
-    func load<Object: MLNDefaultDecodable>(_ objects: inout [Object], forKeys keys: [String]) -> Bool
+    func load<Object: MLNDefaultDecodable>(_ type: Object.Type, forKeys keys: [String]) -> [Object]?
 }

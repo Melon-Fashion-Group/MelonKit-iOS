@@ -2,7 +2,7 @@
 //  MLNDefaultEncodable.swift
 //  MelonKit
 //
-//  Created by Dimka Novikov on 01.12.2023.
+//  Created by Dimka Novikov on 05.12.2023.
 //  Copyright © 2023 Melon Fashion Group. All rights reserved.
 //
 
