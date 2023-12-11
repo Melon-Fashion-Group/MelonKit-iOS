@@ -23,10 +23,10 @@ public protocol MLNKeychainRemovable: MLNServiceable {
     ///
     ///
     ///
-    func remove(for service: String, with account: String) async -> Bool
+    func remove(for service: String, with account: String) -> Bool
 
     ///
     ///
     ///
-    func removeAll() async -> Bool
+    func removeAll() -> Bool
 }

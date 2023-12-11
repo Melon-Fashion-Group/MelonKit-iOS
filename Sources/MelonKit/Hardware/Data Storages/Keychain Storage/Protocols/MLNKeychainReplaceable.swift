@@ -26,5 +26,5 @@ public protocol MLNKeychainReplaceable: MLNServiceable {
     ///
     ///
     ///
-    func replace<Object: MLNDataEncodable>(_ object: Object, for service: String, with account: String) async -> Bool
+    func replace<Object: MLNDataEncodable>(_ object: Object, for service: String, with account: String) -> Bool
 }

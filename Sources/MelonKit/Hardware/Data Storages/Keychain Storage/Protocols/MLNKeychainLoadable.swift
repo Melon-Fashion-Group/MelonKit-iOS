@@ -26,5 +26,5 @@ public protocol MLNKeychainLoadable: MLNServiceable {
     ///
     ///
     ///
-    func load<Object: MLNDataDecodable>(_ type: Object.Type, for service: String, with account: String) async -> Object?
+    func load<Object: MLNDataDecodable>(_ type: Object.Type, for service: String, with account: String) -> Object?
 }

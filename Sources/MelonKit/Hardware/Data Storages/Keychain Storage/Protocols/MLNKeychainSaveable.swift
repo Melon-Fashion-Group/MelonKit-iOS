@@ -26,5 +26,5 @@ public protocol MLNKeychainSaveable: MLNServiceable {
     ///
     ///
     ///
-    func save<Object: MLNDataEncodable>(_ object: Object, for service: String, with account: String) async -> Bool
+    func save<Object: MLNDataEncodable>(_ object: Object, for service: String, with account: String) -> Bool
 }

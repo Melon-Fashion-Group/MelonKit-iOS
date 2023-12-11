@@ -40,7 +40,7 @@ public final class MLNKeychainStorage {
 
     // MARK: - Private functions
 
-    private func load(service: String, account: String) async -> Data? {
+    private func load(service: String, account: String) -> Data? {
         let query: CFDictionary
 
         switch cloudSaving {
@@ -78,7 +78,7 @@ public final class MLNKeychainStorage {
         return data
     }
 
-    private func remove(service: String, account: String) async -> Bool {
+    private func remove(service: String, account: String) -> Bool {
         let query: CFDictionary
 
         switch cloudSaving {
@@ -107,7 +107,7 @@ public final class MLNKeychainStorage {
         return true
     }
 
-    private func save(_ data: Data, service: String, account: String) async -> Bool {
+    private func save(_ data: Data, service: String, account: String) -> Bool {
         let query: CFDictionary
 
         switch cloudSaving {
@@ -160,9 +160,9 @@ extension MLNKeychainStorage: MLNKeychainLoadable {
         _ type: Object.Type,
         for service: String,
         with account: String
-    ) async -> Object? {
+    ) -> Object? {
         guard
-            let data = await load(service: service, account: account),
+            let data = load(service: service, account: account),
             let object = try? JSONDecoder().decode(type, from: data)
         else {
             return nil
@@ -184,15 +184,15 @@ extension MLNKeychainStorage: MLNKeychainRemovable {
     ///
     ///
     @discardableResult
-    public func remove(for service: String, with account: String) async -> Bool {
-        await remove(service: service, account: account)
+    public func remove(for service: String, with account: String) -> Bool {
+        remove(service: service, account: account)
     }
 
     ///
     ///
     ///
     @discardableResult
-    public func removeAll() async -> Bool {
+    public func removeAll() -> Bool {
         let query: CFDictionary
 
         switch cloudSaving {
@@ -234,8 +234,8 @@ extension MLNKeychainStorage: MLNKeychainReplaceable {
         _ object: Object,
         for service: String,
         with account: String
-    ) async -> Bool {
-        await save(object, for: service, with: account)
+    ) -> Bool {
+        save(object, for: service, with: account)
     }
 }
 
@@ -255,11 +255,11 @@ extension MLNKeychainStorage: MLNKeychainSaveable {
         _ object: Object,
         for service: String,
         with account: String
-    ) async -> Bool {
+    ) -> Bool {
         guard let data = try? JSONEncoder().encode(object) else {
             return false
         }
 
-        return await save(data, service: service, account: account)
+        return save(data, service: service, account: account)
     }
 }
