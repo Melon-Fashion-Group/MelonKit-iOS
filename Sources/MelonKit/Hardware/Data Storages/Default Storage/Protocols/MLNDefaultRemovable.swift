@@ -26,10 +26,10 @@ public protocol MLNDefaultRemovable: MLNServiceable {
     ///
     ///
     ///
-    func remove(forKey key: String) async -> Bool
+    func remove(forKey key: String) -> Bool
 
     ///
     ///
     ///
-    func removeAll() async -> Bool
+    func removeAll() -> Bool
 }

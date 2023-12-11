@@ -26,5 +26,5 @@ public protocol MLNDefaultLoadable: MLNServiceable {
     ///
     ///
     ///
-    func load<Object: MLNDataDecodable>(_ type: Object.Type, forKey key: String) async -> Object?
+    func load<Object: MLNDataDecodable>(_ type: Object.Type, forKey key: String) -> Object?
 }

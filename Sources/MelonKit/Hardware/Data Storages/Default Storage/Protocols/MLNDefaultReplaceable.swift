@@ -26,5 +26,5 @@ public protocol MLNDefaultReplaceable: MLNServiceable {
     ///
     ///
     ///
-    func replace<Object: MLNDataEncodable>(_ object: Object, forKey key: String) async -> Bool
+    func replace<Object: MLNDataEncodable>(_ object: Object, forKey key: String) -> Bool
 }

@@ -46,7 +46,7 @@ extension MLNDefaultStorage: MLNDefaultLoadable {
     ///
     ///
     ///
-    public func load<Object: MLNDataDecodable>(_ type: Object.Type, forKey key: String) async -> Object? {
+    public func load<Object: MLNDataDecodable>(_ type: Object.Type, forKey key: String) -> Object? {
         guard
             let object = userDefaults.object(forKey: key) as? Data,
             let loadedObject = try? JSONDecoder().decode(type, from: object)
@@ -70,7 +70,7 @@ extension MLNDefaultStorage: MLNDefaultRemovable {
     ///
     ///
     @discardableResult
-    public func remove(forKey key: String) async -> Bool {
+    public func remove(forKey key: String) -> Bool {
         userDefaults.removeObject(forKey: key)
 
         return true
@@ -80,7 +80,7 @@ extension MLNDefaultStorage: MLNDefaultRemovable {
     ///
     ///
     @discardableResult
-    public func removeAll() async -> Bool {
+    public func removeAll() -> Bool {
         guard let bundleID = Bundle.main.bundleIdentifier else {
             return false
         }
@@ -105,8 +105,8 @@ extension MLNDefaultStorage: MLNDefaultReplaceable {
     ///
     ///
     @discardableResult
-    public func replace<Object: MLNDataEncodable>(_ object: Object, forKey key: String) async -> Bool {
-        await save(object, forKey: key)
+    public func replace<Object: MLNDataEncodable>(_ object: Object, forKey key: String) -> Bool {
+        save(object, forKey: key)
     }
 }
 
@@ -122,7 +122,7 @@ extension MLNDefaultStorage: MLNDefaultSaveable {
     ///
     ///
     @discardableResult
-    public func save<Object: MLNDataEncodable>(_ object: Object, forKey key: String) async -> Bool {
+    public func save<Object: MLNDataEncodable>(_ object: Object, forKey key: String) -> Bool {
         guard let data = try? JSONEncoder().encode(object) else {
             return false
         }
